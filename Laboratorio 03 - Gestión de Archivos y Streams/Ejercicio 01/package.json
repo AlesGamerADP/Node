@@ -1,5 +1,5 @@
 {
-  "name": "semana_03_2",
+  "name": "ejercicio-01",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "exceljs": "^4.4.0"
+    "fs-extra": "^11.3.1"
   }
 }
