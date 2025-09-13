@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="container">
+
+  <h4 class="center-align">Catálogo - Videojuegos</h4>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <h5>Registrar nuevo videojuego</h5>
+        <form action="/videogames" method="POST">
+          <div class="input-field">
+            <input id="titulo" name="titulo" type="text" required>
+            <label for="titulo">Título</label>
+          </div>
+
+          <div class="input-field">
+            <input id="plataforma" name="plataforma" type="text" required>
+            <label for="plataforma">Plataforma (PC, PS5, Switch...)</label>
+          </div>
+
+          <div class="input-field">
+            <input id="genero" name="genero" type="text" required>
+            <label for="genero">Género</label>
+          </div>
+
+          <div class="input-field">
+            <input id="anio" name="anio" type="number" min="1970" max="2030" required>
+            <label for="anio">Año de lanzamiento</label>
+          </div>
+
+          <div class="input-field">
+            <input id="desarrollador" name="desarrollador" type="text" required>
+            <label for="desarrollador">Desarrollador</label>
+          </div>
+
+          <div class="input-field">
+            <input id="calificacion" name="calificacion" type="text" placeholder="Ej: 9/10 o PEGI 16" required>
+            <label for="calificacion">Calificación</label>
+          </div>
+
+          <div class="row">
+            <div class="col s8">
+              <button type="submit" class="btn waves-effect waves-light">Agregar</button>
+              <a href="/" class="btn grey">Inicio</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col s12 m6">
+      <div class="card">
+        <h5>Listado</h5>
+        <table class="highlight responsive-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Plataforma</th>
+              <th>Género</th>
+              <th>Año</th>
+              <th>Desarrollador</th>
+              <th>Calif.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (videoGames && videoGames.length > 0) { %>
+              <% videoGames.forEach(v => { %>
+                <tr>
+                  <td><%= v.id %></td>
+                  <td><%= v.titulo %></td>
+                  <td><%= v.plataforma %></td>
+                  <td><%= v.genero %></td>
+                  <td><%= v.anio %></td>
+                  <td><%= v.desarrollador %></td>
+                  <td><%= v.calificacion %></td>
+                </tr>
+              <% }) %>
+            <% } else { %>
+              <tr>
+                <td colspan="7" class="center-align">No hay videojuegos registrados aún.</td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
