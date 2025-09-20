@@ -1,0 +1,193 @@
+{
+  "tickets": [
+    {
+      "id": "7cd864ee-d219-43a4-bebf-4df8c357dd36",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "8a129d38-924d-4eb8-bc9a-a3274c5ae03e",
+      "title": "Problema 1",
+      "description": "Ocurrió un error en el sistema",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "d22613a5-071e-477a-879b-e0f9317eebb0",
+      "title": "Problema 1",
+      "description": "Ocurrió un error en el sistema",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "032ad094-8a92-4585-a1c9-2fae3bc6d247",
+      "title": "Problema 1",
+      "description": "Ocurrió un error en el sistema",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "183af538-acbc-429a-aa95-acd22cedf809",
+      "title": "Problema 1",
+      "description": "Ocurrió un error en el sistema",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "6ccfc148-426b-4b3a-a80c-0bb267627b09",
+      "title": "Problema 2",
+      "description": "Ocurrió un error en el sistema",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "1bdec7ed-b934-4faf-a03a-41c88fd3fd52",
+      "title": "Problema 3",
+      "description": "Ocurrió un error en el sistema",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    }
+  ],
+  "notifications": [
+    {
+      "id": "972bb23b-03e6-493e-9d81-c795bbb0b419",
+      "type": "email",
+      "message": "Nuevo ticket creado: undefined",
+      "status": "pending",
+      "ticketId": "7cd864ee-d219-43a4-bebf-4df8c357dd36"
+    },
+    {
+      "id": "e8bfd62e-3f10-43c5-8258-50ae1b8cbbd4",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "deb3a64b-be88-4dba-8ccc-945dbb339ac8"
+    },
+    {
+      "id": "e4c689f2-8003-4eab-aed7-7e7d03890f44",
+      "type": "email",
+      "message": "El ticket deb3a64b-be88-4dba-8ccc-945dbb339ac8 fue asignado a Alessandro",
+      "status": "pending",
+      "ticketId": "deb3a64b-be88-4dba-8ccc-945dbb339ac8"
+    },
+    {
+      "id": "8c21dcfb-d111-4d8f-9e05-169df31582fe",
+      "type": "push",
+      "message": "El ticket deb3a64b-be88-4dba-8ccc-945dbb339ac8 cambió a asignado",
+      "status": "pending",
+      "ticketId": "deb3a64b-be88-4dba-8ccc-945dbb339ac8"
+    },
+    {
+      "id": "3927c0e8-79ec-4ca4-a05d-f4af13f8e1f1",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "e9fe3467-21be-4140-b25b-06f834e411d0",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "91527e62-ff30-4554-80bd-b2794e0300b6",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "ca2fdd83-9a24-4314-a5c9-edb2bc8b79ce",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "2d811101-c406-476b-bfcf-2384d54912e8",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "d39f6d0b-7f2c-4fa5-ad38-142e69f9b364",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "92045730-00a4-47ff-bbf5-0b25c9adfa16",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "69e07cb5-e2b9-4e27-8ed5-f91dfa7ab537",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "8b79c268-ed10-4ee6-94f4-38d64121b6df",
+      "type": "email",
+      "message": "Esto es una prueba desde Postman",
+      "status": "pending",
+      "ticketId": "abc123"
+    },
+    {
+      "id": "1f6754ec-904a-4b75-9471-bccfbdae9b38",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "8a129d38-924d-4eb8-bc9a-a3274c5ae03e"
+    },
+    {
+      "id": "20d4617c-7ec8-4755-9877-4f2b79f7a539",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "d22613a5-071e-477a-879b-e0f9317eebb0"
+    },
+    {
+      "id": "44be0bb3-9ab3-4334-a57d-08ccedd37443",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "032ad094-8a92-4585-a1c9-2fae3bc6d247"
+    },
+    {
+      "id": "1dcf4dc1-e9e3-4551-b1f5-eea4814f766e",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "183af538-acbc-429a-aa95-acd22cedf809"
+    },
+    {
+      "id": "b6b3197a-ea63-4def-99ed-7725decd8b8c",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 2",
+      "status": "pending",
+      "ticketId": "6ccfc148-426b-4b3a-a80c-0bb267627b09"
+    },
+    {
+      "id": "520cebaf-2aad-40ad-8b2d-24da571bdd03",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 3",
+      "status": "pending",
+      "ticketId": "1bdec7ed-b934-4faf-a03a-41c88fd3fd52"
+    }
+  ]
+}
