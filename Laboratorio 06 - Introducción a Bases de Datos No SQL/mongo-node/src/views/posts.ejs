@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media - Posts</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body class="grey lighten-4">
+  <nav>
+    <div class="nav-wrapper teal">
+      <a href="/" class="brand-logo center">Social Media</a>
+    </div>
+  </nav>
+
+  <a href="/posts/create/<%= userId %>" class="btn-floating btn-large waves-effect waves-light teal tooltipped right"
+    data-position="left" data-tooltip="Crear nuevo post" style="margin-top: 10px; margin-right: 15px;">
+    <i class="material-icons">add</i>
+  </a>
+
+  <div class="container" style="position: relative;">
+
+    <h4 class="center-align">Lista de Posts</h4>
+
+    <div class="row">
+      <% posts.forEach(post=> { %>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <% if (post.ImageUrl) { %>
+                <img src="<%= post.ImageUrl %>" alt="Imagen del post">
+                <% } else { %>
+                  <img src="https://via.placeholder.com/300x200?text=Sin+Imagen" alt="Sin imagen">
+                  <% } %>
+            </div>
+            <div class="card-content">
+              <span class="card-title">
+                <%= post.title %>
+              </span>
+              <p>
+                <%= post.content %>
+              </p>
+              <% if (post.hashtags && post.hashtags.length> 0) { %>
+                <p>
+                  <strong>Hashtags:</strong>
+                  <% post.hashtags.forEach(tag=> { %>
+                    <span class="chip">#<%= tag %></span>
+                    <% }) %>
+                </p>
+                <% } %>
+            </div>
+            <div class="card-action">
+              <div class="right">
+                <a href="/posts/edit/<%= post._id %>" class="btn-flat"><i class="material-icons teal-text">edit</i></a>
+                <a href="/posts/delete/<%= post._id %>" class="btn-flat"><i
+                    class="material-icons red-text">delete</i></a>
+              </div>
+              <span><strong>Autor:</strong>
+                <%= post.user ? post.user.name : "Desconocido" %>
+              </span>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.tooltipped');
+      M.Tooltip.init(elems);
+    });
+  </script>
+</body>
+
+</html>
