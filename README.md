@@ -4,17 +4,3 @@
 Se ejecuta sobre el motor de JavaScript **V8** y utiliza una arquitectura de **E/S (entrada/salida) basada en eventos y sin bloqueo**, lo que lo hace altamente eficiente y adecuado para aplicaciones en tiempo real.
 
 ---
-
-## Laboratorio 03  
-
-### Gestión de Archivos  
-La **gestión de archivos** es el conjunto de operaciones que permiten **crear, leer, escribir y modificar** archivos dentro de un sistema.  
-
-### Streams (Flujos)  
-Los **streams** son canales que permiten procesar datos de forma **secuencial** entre un programa y diferentes fuentes o destinos, como:  
-- Archivos  
-- Consola  
-- Red  
-
-Esto facilita el manejo de grandes volúmenes de información sin necesidad de cargar todo el contenido en memoria.  
-
