@@ -11,25 +11,15 @@ interface MovieSummary {
 }
 
 export default function SearchPage() {
-  // --- ESTADOS ---
   const [searchType, setSearchType] = useState<'general' | 'titleYear'>('general');
-
-  // Estados para la búsqueda general
   const [generalQuery, setGeneralQuery] = useState('');
   const [movies, setMovies] = useState<MovieSummary[]>([]);
-
-  // Estados para la búsqueda por Título y Año
   const [titleQuery, setTitleQuery] =useState('');
   const [yearQuery, setYearQuery] = useState('');
-
-  // Estados compartidos
   const [selectedMovie, setSelectedMovie] = useState<MovieDetails | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // --- LÓGICA DE BÚSQUEDA ---
-
-  // Búsqueda General (debounced)
   useEffect(() => {
     if (searchType !== 'general') return;
     const timer = setTimeout(() => {
@@ -42,7 +32,6 @@ export default function SearchPage() {
     return () => clearTimeout(timer);
   }, [generalQuery, searchType]);
 
-  // Función para BÚSQUEDA GENERAL (&s=...)
   const searchMovies = async (searchQuery: string) => {
     setIsLoading(true);
     setError('');
@@ -63,7 +52,6 @@ export default function SearchPage() {
     finally { setIsLoading(false); }
   };
   
-  // Función para BÚSQUEDA POR TÍTULO Y AÑO (&t=...&y=...)
   const searchByTitleAndYear = async () => {
     if (!titleQuery) {
         setError("El campo de título es obligatorio.");
@@ -71,14 +59,13 @@ export default function SearchPage() {
     }
     setIsLoading(true);
     setError('');
-    setMovies([]); // Limpiamos la búsqueda general
+    setMovies([]);
     const apiKey = process.env.NEXT_PUBLIC_OMDB_API_KEY;
     try {
         const yearParam = yearQuery ? `&y=${yearQuery}` : '';
         const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${titleQuery}${yearParam}`);
         const data = await res.json();
         if (data.Response === "True") {
-            // Como devuelve un solo resultado detallado, lo mostramos en el modal directamente
             setSelectedMovie(data);
         } else {
             setError(data.Error);
@@ -87,7 +74,6 @@ export default function SearchPage() {
     finally { setIsLoading(false); }
   };
 
-  // Función para obtener detalles (para la búsqueda general)
   const getMovieDetails = async (id: string) => {
     const apiKey = process.env.NEXT_PUBLIC_OMDB_API_KEY;
     const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${id}`);
@@ -95,13 +81,10 @@ export default function SearchPage() {
     setSelectedMovie(data);
   };
 
-  // --- RENDERIZADO (JSX) ---
   return (
     <div className="bg-gray-900 min-h-screen p-8 text-white">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-extrabold text-center mb-6">Busca una Película o Serie</h1>
-        
-        {/* Pestañas para cambiar de tipo de búsqueda */}
         <div className="flex justify-center mb-4 border-b border-gray-700">
             <button 
                 onClick={() => setSearchType('general')}
@@ -114,8 +97,6 @@ export default function SearchPage() {
                 Por Título y Año
             </button>
         </div>
-
-        {/* Contenido dinámico según la pestaña seleccionada */}
         {searchType === 'general' ? (
             <div>
                 <input 
@@ -149,12 +130,8 @@ export default function SearchPage() {
                 </button>
             </div>
         )}
-
-        {/* Resultados y errores */}
         {isLoading && <p className="text-center mt-8">Buscando...</p>}
-        {error && <p className="text-center mt-8 text-red-500">{error}</p>}
-        
-        {/* Grid para resultados de búsqueda general */}
+        {error && <p className="text-center mt-8 text-red-500">{error}</p>}  
         {searchType === 'general' && movies.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
                 {movies.map(movie => (
